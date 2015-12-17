@@ -1,0 +1,69 @@
+// Loose security policy, you must explicitly deny things here.
+// https://docs.oracle.com/javase/8/docs/technotes/guides/security/PolicyFiles.html
+
+priority "grant";
+
+deny {
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#AWTPermission
+  // permission java.awt.AWTPermission "something";
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#FilePermission
+  //
+  permission java.io.FilePermission "<<ALL FILES>>", "execute";
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#SerializablePermission
+  // permission java.io.SerializablePermission "something";
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#ManagementPermission
+  // permission java.lang.management.ManagementPermission "something"
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#RuntimePermission
+  // permission java.lang.RuntimePermission "something";
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#NetPermission
+  // permission java.net.NetPermission "something";
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#SocketPermission
+  // permission java.net.SocketPermission "something";
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#URLPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#LinkPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#AllPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#SecurityPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#UnresolvedPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#SQLPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#LoggingPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#PropertyPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#MBeanPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#MBeanServerPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#MBeanTrustPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#SubjectDelegationPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#SSLPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#AuthPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#DelegationPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#ServicePermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#PrivateCredentialPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#AudioPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#JAXBPermission
+
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#WebServicePermission
+
+};

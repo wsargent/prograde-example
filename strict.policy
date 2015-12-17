@@ -1,0 +1,12 @@
+// Strict security policy that will only give the minimum needed.
+// https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html
+// https://docs.oracle.com/javase/8/docs/technotes/guides/security/PolicyFiles.html
+
+grant {
+  // You can read user.dir
+  permission java.util.PropertyPermission "user.dir", "read";
+
+  // Gets access to the current user directory script
+  permission java.io.FilePermission "${user.dir}/testscript.sh", "execute";
+  permission java.util.PropertyPermission "scala.control.noTraceSuppression", "read";
+};
