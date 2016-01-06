@@ -1,0 +1,46 @@
+// These are the minimum sets of files needed for self protection of the security manager.
+// This should NEVER be disabled.
+// See "Evaluating the Flexibility of the Java Sandbox" <https://www.cs.cmu.edu/~clegoues/docs/coker15acsac.pdf>
+deny {
+  //-----------------------------
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#FilePermission
+
+  // Write to or execute any file.
+  permission java.io.FilePermission "<<ALL FILES>>", "write, execute";
+
+  //-----------------------------
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#RuntimePermission
+
+  // Load classes into any protection domain
+  permission java.lang.RuntimePermission "createClassLoader";
+
+  // Access powerful restricted access internal classes
+  permission java.lang.RuntimePermission "accessClassInPackage.sun";
+
+  // Change current security manager
+  permission java.lang.RuntimePermission "setSecurityManager";
+
+  //-----------------------------
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#ReflectPermission
+
+  // Allow access to all class fields and methods as if they are public.
+  permission java.lang.reflect.ReflectPermission  "suppressAccessChecks";
+
+  //-----------------------------
+  // https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html#SecurityPermission
+
+  // Modify application permissions at will.
+  permission java.security.SecurityPermission "setPolicy";
+
+  // make privileged internal classes accessible
+  permission java.security.SecurityPermission "setProperty.package.access";
+};
+
+// http://slightlyrandombrokenthoughts.blogspot.com/2009/07/java-se-security-part-ii-immutability.html
+deny {
+  permission java.lang.RuntimePermission "charsetProvider";
+};
+
+grant {
+  permission java.io.FilePermission "${user.dir}/testscript.sh", "execute";
+};
